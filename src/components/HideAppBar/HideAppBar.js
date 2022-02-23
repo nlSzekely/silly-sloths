@@ -26,7 +26,7 @@ export default function HideAppBar(props) {
                     <ResponsiveAppBar />
                 </AppBar>
             </HideOnScroll>
-            <Toolbar />
+            <Toolbar id="back-to-top-anchor" />
         </React.Fragment>
     );
 }
