@@ -1,13 +1,13 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Slide from '@mui/material/Slide';
+import ResponsiveAppBar from "../ResponsiveAppBar/ResponsiveAppBar";
 
 function HideOnScroll(props) {
-    const {children} = props;
+    const { children } = props;
     const trigger = useScrollTrigger();
 
     return (
@@ -23,20 +23,7 @@ export default function HideAppBar(props) {
         <React.Fragment>
             <HideOnScroll {...props}>
                 <AppBar>
-                    <Toolbar>
-                        <Typography variant='h6' component='div'>
-                            About us
-                        </Typography>
-                        <Typography variant='h6' component='div'>
-                            Collectibles
-                        </Typography>
-                        <Typography variant='h6' component='div'>
-                            Roadmap
-                        </Typography>
-                        <Typography variant='h6' component='div'>
-                            FAQ
-                        </Typography>
-                    </Toolbar>
+                    <ResponsiveAppBar />
                 </AppBar>
             </HideOnScroll>
             <Toolbar />
