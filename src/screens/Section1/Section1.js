@@ -4,6 +4,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
+import Marquee from 'react-fast-marquee';
 
 import image1 from '../../assets/about-us-animation/1.png';
 import image2 from '../../assets/about-us-animation/2.png';
@@ -26,91 +27,100 @@ import image18 from '../../assets/about-us-animation/18.png';
 import image19 from '../../assets/about-us-animation/19.png';
 import image20 from '../../assets/about-us-animation/20.png';
 
-import './Section1.css';
+import './Section.css';
 
 export default function Section1() {
     return (
-        <Grid container sx={{padding: 5}}>
-            <div style={{borderTopLeftRadius: 35, borderBottomLeftRadius: 35}} className='carousel-container'>
-                <div className='gradient-top'></div>
+        <Grid container mt={"40px"} sx={{padding: 3}}>
+            <Grid
+                item
+                xs={12}
+                sm={6}
+                lg={5}
+                sx={{
+                    width: {
+                        sm: '600px',
+                        xs: '100%',
+                    },
+                }}
+            >
+                <Marquee
+                    pauseOnHover
+                    style={{
+                        width: '100%',
+                        borderTopRightRadius: 35,
+                        borderTopLeftRadius: 35,
+                        overflow: 'hidden',
+                    }}
+                    gradientWidth={80}
+                    gradientColor={[20, 20, 20]}
+                >
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image1} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image2} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image3} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image4} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image5} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image6} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image7} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image8} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image9} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image10} />
+                </Marquee>
+                <Marquee
+                    pauseOnHover
+                    style={{borderBottomRightRadius: 35, borderBottomLeftRadius: 35, overflow: 'hidden'}}
+                    gradientWidth={80}
+                    gradientColor={[20, 20, 20]}
+                    direction='right'
+                >
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image11} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image12} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image13} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image14} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image15} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image16} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image17} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image18} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image19} />
+                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image20} />
+                </Marquee>
+            </Grid>
+            <Grid
+                sx={{
+                    padding: {
+                        lg: '0 100px',
+                        xs:'0 20px'
+                    },
+                }}
+                item
+                xs={12}
+                sm={6}
+                lg={7}
+            >
+                <Typography sx={{marginTop:{xs:"24px", lg:"0px"}}} mb={'16px'} textAlign='center' fontWeight='bold' variant='h3'>
+                    Welcome to the
+                </Typography>
+                <Typography mb={'24px'} textAlign='center' fontWeight='bold' variant='h3'>
+                    Silly Sloth Club
+                </Typography>
+                <Typography component='p' mb={'24px'} fontSize={'20px'} variant='p'>
+                    The Silly Sloth Club is a collection of 10,000 AI-generated collectibles living on the Cardano
+                    jungle.
+                </Typography>
+                <Typography component='p' variant='p' fontSize={'20px'}>
+                    All 10,000 Silly Sloths are programmatically randomly generated from more than 120 attributes witch
+                    blends together perfectly and gives a unic personality to each Sloth.
+                </Typography>
 
-                <div
-                    className='mover-1'
-                    style={{
-                        maxWidth: '300px',
-                    }}
-                >
-                    <img className='img' src={image1} />
-                    <img className='img' src={image2} />
-                    {/* <img className='img' src={image3} />
-                    <img className='img' src={image4} />
-                    <img className='img' src={image5} />
-                    <img className='img' src={image6} />
-                    <img className='img' src={image7} />
-                    <img className='img' src={image8} />
-                    <img className='img' src={image9} />
-                    <img className='img' src={image10} /> */}
-                </div>
-                <div
-                    className='mover-2'
-                    style={{
-                        maxWidth: '300px',
-                    }}
-                >
-                    <img className='img' src={image1} />
-                    <img className='img' src={image2} />
-                    {/* <img className='img' src={image3} />
-                    <img className='img' src={image4} />
-                    <img className='img' src={image5} />
-                    <img className='img' src={image6} />
-                    <img className='img' src={image7} />
-                    <img className='img' src={image8} />
-                    <img className='img' src={image9} />
-                    <img className='img' src={image10} /> */}
-                </div>
-                <div className='gradient-bottom'></div>
-
-            </div>
-{/* 
-            <div style={{borderTopRightRadius:35, borderBottomRightRadius:35}} className='carousel-container'>
-                <div className='gradient-top'></div>
-
-                <div
-                    className='mover-1-reverse'
-                    style={{
-                        maxWidth: '300px',
-                    }}
-                >
-                    <img className='img' src={image11} />
-                    <img className='img' src={image12} />
-                    <img className='img' src={image13} />
-                    <img className='img' src={image14} />
-                    <img className='img' src={image15} />
-                    <img className='img' src={image16} />
-                    <img className='img' src={image17} />
-                    <img className='img' src={image18} />
-                    <img className='img' src={image19} />
-                    <img className='img' src={image20} />
-                </div>
-                <div
-                    className='mover-2-reverse'
-                    style={{
-                        maxWidth: '300px',
-                    }}
-                >
-                    <img className='img' src={image11} />
-                    <img className='img' src={image12} />
-                    <img className='img' src={image13} />
-                    <img className='img' src={image14} />
-                    <img className='img' src={image15} />
-                    <img className='img' src={image16} />
-                    <img className='img' src={image17} />
-                    <img className='img' src={image18} />
-                    <img className='img' src={image19} />
-                    <img className='img' src={image20} />
-                </div>
-                <div className='gradient-bottom'></div>
-            </div> */}
+                <Grid>
+                    <Button>
+                        <Typography>BUY ON CNFT.io</Typography>
+                    </Button>
+                    <Button>
+                        <Typography>BUY ON jpg.store</Typography>
+                    </Button>
+                </Grid>
+            </Grid>
         </Grid>
     );
 }

@@ -40,8 +40,11 @@ const ResponsiveAppBar = () => {
         <Container  maxWidth='xl'>
             <Grid justifyContent='space-between' container>
                 {/* Logo --- */}
-                <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0'}}>
+                <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0',alignItems:"center"}}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />
+                    <Typography ml={2}>
+                    Silly Sloth Club
+                    </Typography>
                 </Box>
 
                 <Box sx={{display: {xs: 'flex', md: 'none'}}}>
