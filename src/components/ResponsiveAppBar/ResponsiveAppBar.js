@@ -13,6 +13,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Grid from '@mui/material/Grid';
+import Link from '@mui/material/Link';
 
 const pages = ['About us', 'Collectibles', 'Roadmap', 'FAQ'];
 
@@ -36,8 +37,8 @@ const ResponsiveAppBar = () => {
     };
 
     return (
-        <Container maxWidth='xl'>
-            <Grid alignItems='center' justifyContent='space-between' container>
+        <Container  maxWidth='xl'>
+            <Grid justifyContent='space-between' container>
                 {/* Logo --- */}
                 <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0'}}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />
@@ -89,13 +90,15 @@ const ResponsiveAppBar = () => {
                         <Button
                             key={page}
                             onClick={handleCloseNavMenu}
-                            sx={{my: 2, color: 'white', display: 'block', margin: '0 10px'}}
+                            sx={{ color: 'white', borderRadius:0, px: 4 }}
                         >
-                            {page}
+                            <Typography>
+                                {page}
+                            </Typography>
                         </Button>
                     ))}
                 </Box>
-                <Box sx={{justifySelf: 'flex-end'}}>
+                <Box sx={{justifySelf: 'flex-end', alignSelf:"center"}}>
                     <IconButton size='large' color='inherit'>
                         <InstagramIcon />
                     </IconButton>
@@ -111,3 +114,4 @@ const ResponsiveAppBar = () => {
     );
 };
 export default ResponsiveAppBar;
+

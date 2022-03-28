@@ -11,7 +11,7 @@ function HideOnScroll(props) {
     const trigger = useScrollTrigger();
 
     return (
-        <Slide appear={false} direction='down' in={!trigger}>
+        <Slide  appear={false} direction='down' in={!trigger}>
             {children}
         </Slide>
     );
@@ -22,7 +22,7 @@ export default function HideAppBar(props) {
     return (
         <React.Fragment>
             <HideOnScroll {...props}>
-                <AppBar>
+                <AppBar sx={{ borderBottomLeftRadius: 30,borderBottomRightRadius:30, overflow:"hidden", backgroundColor:"primary.nav"}} > 
                     <ResponsiveAppBar />
                 </AppBar>
             </HideOnScroll>

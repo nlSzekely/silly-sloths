@@ -11,6 +11,7 @@ let theme = createTheme({
     palette: {
         primary: {
             main: '#18181B',
+            nav:"#121417"
         },
         secondary: {
             main: '#0280DF',
@@ -18,6 +19,7 @@ let theme = createTheme({
         
     },
     typography: {
+        fontFamily: 'Montserrat',
         button: {
           textTransform: 'none'
         },
@@ -25,6 +27,9 @@ let theme = createTheme({
             color: "#ffffff"
         },
         h3:{
+            color: "#ffffff"  
+        },
+        h5:{
             color: "#ffffff"  
         },
         p:{
@@ -44,10 +49,7 @@ function App() {
                     <NavBar />
                     <ScrollTop />
                     <Section1/>
-                    <Section1/>
-                    <Section1/>
-                    <Section1/>
-                    <Section1/>
+   
 
 
                 </Grid>
@@ -58,9 +60,9 @@ function App() {
 
 const styles = {
     container: {
-        backgroundColor: 'primary.main',
         minHeight: '100vh',
-        width: "100%"
+        width: "100%",
+        background: 'linear-gradient(180deg, rgba(24,28,36,1) 0%, rgba(22,24,29,1) 100%)',
     },
 };
 
