@@ -1,0 +1,95 @@
+
+.img{
+  max-width: 300px;
+  height: auto;
+  border-radius: 40%;
+}
+
+.gradient-top{
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(19,20,24,1) 0%, rgba(20,21,25,0) 100%);
+  z-index: 10;
+}
+
+.gradient-bottom{
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: linear-gradient(0deg, rgba(19,20,24,1) 0%, rgba(20,21,25,0) 100%);
+  z-index: 10;
+}
+
+
+  .carousel-container{
+    transform: translate3d(0, 0, 0);
+    position: relative;
+    max-height:600px ; 
+    overflow: hidden;
+  }
+
+  .mover-1 {
+    animation: marquee 22s linear infinite;
+  }
+
+  .mover-2 {
+    animation: marquee2 22s  linear infinite;
+    animation-delay: 11s;
+  }
+
+  .mover-1-reverse {
+    animation: marquee-reverse 22s linear infinite;
+  }
+
+  .mover-2-reverse{
+    animation: marquee2-reverse 22s  linear infinite;
+    animation-delay: 11s;
+  }
+
+  @keyframes marquee-reverse {
+    from{
+      transform: translateY(-100%);
+
+    }
+    to {
+      transform: translateY(100%);
+    }
+  }
+  
+  @keyframes marquee2-reverse {
+    from{
+      transform: translateY(-200%);
+
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  
+  @keyframes marquee {
+    from{
+      transform: translateY(0%);
+
+    }
+    to {
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes marquee2 {
+    from{
+      transform: translateY(0%);
+
+    }
+    to {
+      transform: translateY(-200%);
+    }
+  }
