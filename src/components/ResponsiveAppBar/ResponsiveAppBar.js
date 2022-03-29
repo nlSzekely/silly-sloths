@@ -42,7 +42,7 @@ const ResponsiveAppBar = () => {
                 {/* Logo --- */}
                 <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0',alignItems:"center"}}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />
-                    <Typography ml={2}>
+                    <Typography fontSize={"20px"} fontWeight="bold"  ml={2}>
                     Silly Sloth Club
                     </Typography>
                 </Box>
@@ -95,7 +95,7 @@ const ResponsiveAppBar = () => {
                             onClick={handleCloseNavMenu}
                             sx={{ color: 'white', borderRadius:0, px: 4 }}
                         >
-                            <Typography>
+                            <Typography   fontSize="20px" fontWeight={500}>
                                 {page}
                             </Typography>
                         </Button>

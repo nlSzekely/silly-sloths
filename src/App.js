@@ -19,7 +19,7 @@ let theme = createTheme({
         
     },
     typography: {
-        fontFamily: 'Montserrat',
+        fontFamily: 'Rubik',
         button: {
           textTransform: 'none'
         },
@@ -49,9 +49,6 @@ function App() {
                     <NavBar />
                     <ScrollTop />
                     <Section1/>
-   
-
-
                 </Grid>
             </CssBaseline>
         </ThemeProvider>

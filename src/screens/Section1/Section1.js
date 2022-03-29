@@ -96,7 +96,10 @@ export default function Section1() {
                 xs={12}
                 sm={6}
                 lg={7}
+                justifyContent="center"
+                container
             >
+                <Grid width={"600px"}>
                 <Typography sx={{marginTop:{xs:"24px", lg:"0px"}}} mb={'16px'} textAlign='center' fontWeight='bold' variant='h3'>
                     Welcome to the
                 </Typography>
@@ -112,14 +115,16 @@ export default function Section1() {
                     blends together perfectly and gives a unic personality to each Sloth.
                 </Typography>
 
-                <Grid>
-                    <Button>
-                        <Typography>BUY ON CNFT.io</Typography>
+                <Grid sx={1} container mt={"24px"} justifyContent="space-around">
+                    <Button color='secondary' variant='contained' >
+                        <Typography fontWeight="bold" >BUY ON CNFT.io</Typography>
                     </Button>
-                    <Button>
-                        <Typography>BUY ON jpg.store</Typography>
+                    <Button  color='secondary' variant='contained' >
+                        <Typography  fontWeight="bold">BUY ON jpg.store</Typography>
                     </Button>
                 </Grid>
+                </Grid>
+                
             </Grid>
         </Grid>
     );
