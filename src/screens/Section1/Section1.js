@@ -31,101 +31,109 @@ import './Section.css';
 
 export default function Section1() {
     return (
-        <Grid container mt={"40px"} sx={{padding: 3}}>
+        <Grid container mt={"40px"} sx={{ padding: 3 }}>
             <Grid
                 item
                 xs={12}
-                sm={6}
-                lg={5}
-                sx={{
-                    width: {
-                        sm: '600px',
-                        xs: '100%',
-                    },
-                }}
+                lg={6}
+                sx={styles.contentContainer}
+                justifyContent="center"
+                container
             >
                 <Marquee
                     pauseOnHover
-                    style={{
-                        width: '100%',
-                        borderTopRightRadius: 35,
-                        borderTopLeftRadius: 35,
-                        overflow: 'hidden',
-                    }}
+                    style={{...styles.mrqTop, ...styles.mrq}}
                     gradientWidth={80}
                     gradientColor={[20, 20, 20]}
                 >
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image1} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image2} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image3} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image4} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image5} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image6} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image7} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image8} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image9} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image10} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image1} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image2} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image3} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image4} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image5} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image6} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image7} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image8} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image9} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image10} />
                 </Marquee>
                 <Marquee
                     pauseOnHover
-                    style={{borderBottomRightRadius: 35, borderBottomLeftRadius: 35, overflow: 'hidden'}}
+                    style={{...styles.mrqBottom, ...styles.mrq}}
                     gradientWidth={80}
                     gradientColor={[20, 20, 20]}
                     direction='right'
                 >
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image11} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image12} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image13} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image14} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image15} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image16} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image17} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image18} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image19} />
-                    <img className='img' style={{maxWidth: 200, height: 'auto'}} src={image20} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image11} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image12} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image13} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image14} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image15} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image16} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image17} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image18} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image19} />
+                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image20} />
                 </Marquee>
             </Grid>
             <Grid
-                sx={{
-                    padding: {
-                        lg: '0 100px',
-                        xs:'0 20px'
-                    },
-                }}
+                sx={styles.contentContainer}
                 item
                 xs={12}
-                sm={6}
-                lg={7}
+                lg={6}
                 justifyContent="center"
                 container
             >
                 <Grid width={"600px"}>
-                <Typography sx={{marginTop:{xs:"24px", lg:"0px"}}} mb={'16px'} textAlign='center' fontWeight='bold' variant='h3'>
-                    Welcome to the
-                </Typography>
-                <Typography mb={'24px'} textAlign='center' fontWeight='bold' variant='h3'>
-                    Silly Sloth Club
-                </Typography>
-                <Typography component='p' mb={'24px'} fontSize={'20px'} variant='p'>
-                    The Silly Sloth Club is a collection of 10,000 AI-generated collectibles living on the Cardano
-                    jungle.
-                </Typography>
-                <Typography component='p' variant='p' fontSize={'20px'}>
-                    All 10,000 Silly Sloths are programmatically randomly generated from more than 120 attributes witch
-                    blends together perfectly and gives a unic personality to each Sloth.
-                </Typography>
+                    <Typography sx={{ marginTop: { xs: "24px", lg: "0px" } }} mb={'16px'} textAlign='center' fontWeight='bold' variant='h3'>
+                        Welcome to the
+                    </Typography>
+                    <Typography mb={'24px'} textAlign='center' fontWeight='bold' variant='h3'>
+                        Silly Sloth Club
+                    </Typography>
+                    <Typography component='p' mb={'24px'} fontSize={'20px'} variant='p'>
+                        The Silly Sloth Club is a collection of 10,000 AI-generated collectibles living on the Cardano
+                        jungle.
+                    </Typography>
+                    <Typography component='p' variant='p' fontSize={'20px'}>
+                        All 10,000 Silly Sloths are programmatically randomly generated from more than 120 attributes witch
+                        blends together perfectly and gives a unic personality to each Sloth.
+                    </Typography>
 
-                <Grid sx={1} container mt={"24px"} justifyContent="space-around">
-                    <Button color='secondary' variant='contained' >
-                        <Typography fontWeight="bold" >BUY ON CNFT.io</Typography>
-                    </Button>
-                    <Button  color='secondary' variant='contained' >
-                        <Typography  fontWeight="bold">BUY ON jpg.store</Typography>
-                    </Button>
+                    <Grid sx={1} container mt={"24px"} justifyContent="space-around">
+                        <Button color='secondary' variant='contained' >
+                            <Typography fontWeight="bold" >BUY ON CNFT.io</Typography>
+                        </Button>
+                        <Button color='secondary' variant='contained' >
+                            <Typography fontWeight="bold">BUY ON jpg.store</Typography>
+                        </Button>
+                    </Grid>
                 </Grid>
-                </Grid>
-                
+
             </Grid>
         </Grid>
+
     );
 }
+
+
+const styles = {
+    contentContainer:{
+        padding: {
+            lg: '0 50px',
+            xs: '0 10px'
+        },
+    },
+    mrq:{
+        overflow: 'hidden',
+        maxWidth: "700px",
+    },
+    mrqTop: {
+        borderTopRightRadius: 35,
+        borderTopLeftRadius: 35,
+    },
+    mrqBottom: {
+        borderBottomRightRadius: 35,
+        borderBottomLeftRadius: 35,
+    }
+};
