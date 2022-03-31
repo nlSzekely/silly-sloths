@@ -27,7 +27,7 @@ export default function Footer() {
                 </Typography>
             </Grid>
 
-            <Grid item sx={{display:{md:"flex",xs:"none"}}}>
+            <Grid flexDirection={"column"} item sx={{display:{md:"flex",xs:"none"}}}>
             <Typography mt={'8px'} component='p' variant='p' fontSize={'16px'}>
             Powered by
                 </Typography>
