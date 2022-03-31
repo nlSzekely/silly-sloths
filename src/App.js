@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import NavBar from './components/HideAppBar/HideAppBar';
 import ScrollTop from "./components/ScrollToTop/ScrollToTop";
 import Section1 from './screens/Section1/Section1';
+import Footer from "./components/Footer/Footer";
 
 let theme = createTheme({
     palette: {
@@ -49,6 +50,7 @@ function App() {
                     <NavBar />
                     <ScrollTop />
                     <Section1/>
+                    <Footer/>
                 </Grid>
             </CssBaseline>
         </ThemeProvider>
@@ -57,7 +59,6 @@ function App() {
 
 const styles = {
     container: {
-        minHeight: '100vh',
         width: "100%",
         background: 'linear-gradient(180deg, rgba(24,28,36,1) 0%, rgba(22,24,29,1) 100%)',
     },

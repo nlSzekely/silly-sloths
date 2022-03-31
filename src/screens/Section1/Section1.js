@@ -31,7 +31,7 @@ import './Section.css';
 
 export default function Section1() {
     return (
-        <Grid container mt={"40px"} sx={{ padding: 3 }}>
+        <Grid container  mt={"40px"} sx={{ padding: 3, minHeight:"100vh"}}>
             <Grid
                 item
                 xs={12}
@@ -84,7 +84,7 @@ export default function Section1() {
                 justifyContent="center"
                 container
             >
-                <Grid width={"600px"}>
+                <Grid item width={"600px"}>
                     <Typography sx={{ marginTop: { xs: "24px", lg: "0px" } }} mb={'16px'} textAlign='center' fontWeight='bold' variant='h3'>
                         Welcome to the
                     </Typography>
@@ -100,7 +100,7 @@ export default function Section1() {
                         blends together perfectly and gives a unic personality to each Sloth.
                     </Typography>
 
-                    <Grid sx={1} container mt={"24px"} justifyContent="space-around">
+                    <Grid item  mt={"24px"} justifyContent="space-around">
                         <Button color='secondary' variant='contained' >
                             <Typography fontWeight="bold" >BUY ON CNFT.io</Typography>
                         </Button>
@@ -123,6 +123,7 @@ const styles = {
             lg: '0 50px',
             xs: '0 10px'
         },
+        maxHeight: 400
     },
     mrq:{
         overflow: 'hidden',
