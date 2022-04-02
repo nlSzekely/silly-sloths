@@ -10,6 +10,7 @@ import Section2 from './screens/Section2/Section2';
 import Section3 from './screens/Section3/Section3';
 import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
+import SlothCarousel from "./components/SlothCarousel/SlothCarousel"
 
 let theme = createTheme({
     palette: {
@@ -68,6 +69,7 @@ function App() {
                     <Footer />
                 </Grid>
             </CssBaseline>
+
         </ThemeProvider>
     );
 }

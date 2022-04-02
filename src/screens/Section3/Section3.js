@@ -1,13 +1,13 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
-import MysterySloth from '../../components/MysterySloth/MysterySloth';
+import SlothCarousel from '../../components/SlothCarousel/SlothCarousel';
 
 export default function Section3() {
     return (
         <Grid container sx={{padding: 3, marginTop: '40px'}} alignItems='center'>
             <Grid sx={{...styles.contentContainer, textAlign: 'right'}} lg={6} xs={12} item flexDirection='column'>
-                <Typography variant='h3' mb={"40px"} component='h3' fontWeight='bold'>
+                <Typography variant='h3' mb={'40px'} component='h3' fontWeight='bold'>
                     FIND your favorite
                 </Typography>
 
@@ -21,8 +21,8 @@ export default function Section3() {
                     Sloth and buy it directly form us.
                 </Typography>
             </Grid>
-            <Grid sx={styles.contentContainer} lg={6} xs={12} item container flexDirection='column'>
-               
+            <Grid sx={{position:"relative"}} lg={6} xs={12} item container flexDirection='column'>
+                <SlothCarousel />
             </Grid>
         </Grid>
     );
