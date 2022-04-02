@@ -7,6 +7,7 @@ import NavBar from './components/HideAppBar/HideAppBar';
 import ScrollTop from './components/ScrollToTop/ScrollToTop';
 import Section1 from './screens/Section1/Section1';
 import Section2 from './screens/Section2/Section2';
+import Section3 from './screens/Section3/Section3';
 import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
 
@@ -62,8 +63,8 @@ function App() {
                     <ScrollTop />
                     <Section1 />
                     <Section2 />
+                    <Section3 />
                     <Section4 />
-
                     <Footer />
                 </Grid>
             </CssBaseline>
