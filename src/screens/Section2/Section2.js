@@ -30,24 +30,29 @@ import image20 from '../../assets/about-us-animation/20.png';
 
 export default function Section2() {
     return (
-        <Grid container sx={{padding: 3, marginTop: '40px'}}>
-            <Grid sx={{...styles.contentContainer, textAlign:"right"}} lg={6} xs={12} item flexDirection='column' >
+        <Grid container sx={{padding: 3, marginTop: '40px'}} alignItems='center'>
+            <Grid sx={{...styles.contentContainer, textAlign: 'right'}} lg={6} xs={12} item flexDirection='column'>
                 <Typography variant='h5'>MINT your own</Typography>
                 <Typography mb={'40px'} variant='h5'>
                     Silly Sloth
                 </Typography>
-                <Typography mb={'8px'} component='p' variant='p'>
+                <Typography mb={'8px'} component='p' variant='p' fontSize={'20px'}>
                     Buy a random Silly Sloth directly from us!
                 </Typography>
-                <Typography component='p' variant='p'>
+                <Typography component='p' variant='p' fontSize={'20px'}>
                     You can choose the plan that suits yor needs the best.
                 </Typography>
             </Grid>
-            <Grid sx={styles.contentContainer} lg={6} xs={12} item >
-            <MysterySloth/>
-
+            <Grid sx={styles.contentContainer} lg={6} xs={12} item container flexDirection='column'>
+                <Grid item container justifyContent={'space-around'} >
+                    <MysterySloth />
+                    <MysterySloth quantity={3} price={87} singleSlothImg={false} />
+                </Grid>
+                <Grid mt={'40px'} item container justifyContent={'space-around'}>
+                    <MysterySloth quantity={5} price={140} singleSlothImg={false} />
+                    <MysterySloth quantity={10} price={270} singleSlothImg={false} />
+                </Grid>
             </Grid>
-
         </Grid>
     );
 }

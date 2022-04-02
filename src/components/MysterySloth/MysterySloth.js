@@ -8,34 +8,38 @@ import multiSloth from '../../assets/sl-2.png';
 
 export default function MysterySloth({quantity = 1, price = 30, singleSlothImg = true}) {
     return (
-        <Grid sx={{position: 'relative', maxWidth: '150px', textAlign: 'center'}} justifyContent='center'>
+        <Grid
+            sx={{position: 'relative', textAlign: 'center' ,width: '230px'}}
+        >
             <Grid sx={{position: 'relative'}}>
-                <img width='100px' src={singleSlothImg ? singleSloth : multiSloth} />
+                <img width={singleSlothImg ? '100px' : '198px'} src={singleSlothImg ? singleSloth : multiSloth} />
                 <Typography
-                    sx={{position: 'absolute', color: 'white', top: 36, left: '50%', transform: 'translateX(-50%)', fontSize:"30px", opacity:0.3}}
+                    sx={{
+                        position: 'absolute',
+                        color: 'white',
+                        top: 36,
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        fontSize: '30px',
+                        opacity: 0.3,
+                    }}
                 >
                     ?
                 </Typography>
             </Grid>
 
             <Button
-                sx={{
-                    marginTop: '-20px',
-                    position: 'absolute',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '230px',
-                    bottom: -40,
-                }}
                 variant='contained'
                 color='secondary'
+                sx={{marginTop:"-24px"}}
+                fullWidth
             >
                 <Grid flexDirection='column'>
                     <Typography variant='p' fontWeight='bold' fontSize={12} component='p'>
-                        MINT 1
+                        MINT {quantity}
                     </Typography>
                     <Typography variant='p' fontWeight='bold' fontSize={12} component='p'>
-                        FOR 30 ₳
+                        FOR {price} ₳
                     </Typography>
                 </Grid>
             </Button>
