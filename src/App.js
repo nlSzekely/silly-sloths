@@ -6,6 +6,7 @@ import Grid from '@mui/material/Grid';
 import NavBar from './components/HideAppBar/HideAppBar';
 import ScrollTop from "./components/ScrollToTop/ScrollToTop";
 import Section1 from './screens/Section1/Section1';
+import Section2 from './screens/Section2/Section2';
 import Footer from "./components/Footer/Footer";
 
 let theme = createTheme({
@@ -15,10 +16,21 @@ let theme = createTheme({
             nav:"#121417"
         },
         secondary: {
-            main: '#0280DF',
+            main: '#209DEF',
         },
         
     },
+    
+    components:{
+        MuiButton:{
+            styleOverrides:{
+                root:{
+                    borderRadius:"15px",
+                }
+            }
+        }
+    },
+    
     typography: {
         fontFamily: 'Rubik',
         button: {
@@ -50,6 +62,7 @@ function App() {
                     <NavBar />
                     <ScrollTop />
                     <Section1/>
+                    <Section2/>
                     <Footer/>
                 </Grid>
             </CssBaseline>
