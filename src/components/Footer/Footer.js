@@ -14,7 +14,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 
 export default function Footer() {
     return (
-        <Grid mt={100} sx={styles.container} container justifyContent={'space-between'} alignItems='center'>
+        <Grid sx={styles.container} container justifyContent={'space-between'} alignItems='center'>
             <Grid item flexDirection={'column'}>
                 <Grid item container alignItems={'center'}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />

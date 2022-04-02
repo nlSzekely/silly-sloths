@@ -100,7 +100,7 @@ export default function Section1() {
                         blends together perfectly and gives a unic personality to each Sloth.
                     </Typography>
 
-                    <Grid sx={1} container mt={"24px"} justifyContent="space-around">
+                    <Grid container mt={"24px"} justifyContent="space-around">
                         <Button color='secondary' variant='contained' >
                             <Typography variant="p" m={"5px 20px"}  fontWeight="bold" >BUY ON CNFT.io</Typography>
                         </Button>
