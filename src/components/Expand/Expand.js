@@ -55,6 +55,7 @@ const styles = {
     container: {
         backgroundColor: '#2E3D4B',
         borderRadius: '16px',
+        cursor:"pointer"
     },
     iconContainer: {
         backgroundColor: 'white',

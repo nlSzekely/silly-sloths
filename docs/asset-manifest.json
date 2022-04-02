@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/silly-sloths/static/css/main.374f9f16.css",
-    "main.js": "/silly-sloths/static/js/main.7495c815.js",
+    "main.js": "/silly-sloths/static/js/main.bf446fc2.js",
     "static/js/787.d533dc40.chunk.js": "/silly-sloths/static/js/787.d533dc40.chunk.js",
     "static/media/heroImg.png": "/silly-sloths/static/media/heroImg.4470ccde238aefd439f2.png",
     "static/media/17.png": "/silly-sloths/static/media/17.3820d609a1817611798a.png",
@@ -24,14 +24,15 @@
     "static/media/15.png": "/silly-sloths/static/media/15.33e9344e2f2d1b0f13d9.png",
     "static/media/10.png": "/silly-sloths/static/media/10.4e03c47ad61f1fa04002.png",
     "static/media/18.png": "/silly-sloths/static/media/18.7dc52ba13dc7347872d3.png",
+    "static/media/sl-2.png": "/silly-sloths/static/media/sl-2.5620b0326bda5e9cbb68.png",
     "static/media/logo-white.png": "/silly-sloths/static/media/logo-white.51f99fb2cf3cb90de069.png",
     "index.html": "/silly-sloths/index.html",
     "main.374f9f16.css.map": "/silly-sloths/static/css/main.374f9f16.css.map",
-    "main.7495c815.js.map": "/silly-sloths/static/js/main.7495c815.js.map",
+    "main.bf446fc2.js.map": "/silly-sloths/static/js/main.bf446fc2.js.map",
     "787.d533dc40.chunk.js.map": "/silly-sloths/static/js/787.d533dc40.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.374f9f16.css",
-    "static/js/main.7495c815.js"
+    "static/js/main.bf446fc2.js"
   ]
 }
