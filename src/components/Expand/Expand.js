@@ -17,7 +17,7 @@ export default function NestedList({
     title = 'What is the Silly Sloth Club?',
     description = 'It is a collection of 10,000 unique Silly Sloth NFT-s, digital collectibles on the Cardano blockchain.',
 }) {
-    const [open, setOpen] = React.useState(true);
+    const [open, setOpen] = React.useState(false);
 
     const handleClick = () => {
         setOpen(!open);

@@ -14,6 +14,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
+import {DiscordIcon} from '../../components/Icons/Icons';
 
 const pages = ['About us', 'Collectibles', 'Roadmap', 'FAQ'];
 
@@ -37,13 +38,13 @@ const ResponsiveAppBar = () => {
     };
 
     return (
-        <Container  maxWidth='xl'>
+        <Container maxWidth='xl'>
             <Grid justifyContent='space-between' container>
                 {/* Logo --- */}
-                <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0',alignItems:"center"}}>
+                <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0', alignItems: 'center'}}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />
-                    <Typography fontSize={"18px"} fontWeight="bold"  ml={2}>
-                    Silly Sloth Club
+                    <Typography fontSize={'18px'} fontWeight='bold' ml={2}>
+                        Silly Sloth Club
                     </Typography>
                 </Box>
 
@@ -90,26 +91,25 @@ const ResponsiveAppBar = () => {
 
                 <Box sx={{display: {xs: 'none', md: 'flex'}, marginLeft: 8}}>
                     {pages.map((page) => (
-                        <Button
-                            key={page}
-                            onClick={handleCloseNavMenu}
-                            sx={{ color: 'white', borderRadius:0, px: 4 }}
-                        >
-                            <Typography   fontSize="20px" fontWeight={500}>
+                        <Button key={page} onClick={handleCloseNavMenu} sx={{color: 'white', borderRadius: 0, px: 4}}>
+                            <Typography fontSize='20px' fontWeight={500}>
                                 {page}
                             </Typography>
                         </Button>
                     ))}
                 </Box>
-                <Box sx={{justifySelf: 'flex-end', alignSelf:"center"}}>
+                <Box sx={{justifySelf: 'flex-end', alignSelf: 'center'}}>
+                    <IconButton size='large' color='inherit'>
+                        <TwitterIcon />
+                    </IconButton>
                     <IconButton size='large' color='inherit'>
                         <InstagramIcon />
                     </IconButton>
                     <IconButton size='large' color='inherit'>
                         <FacebookIcon />
                     </IconButton>
-                    <IconButton size='large' color='inherit'>
-                        <TwitterIcon />
+                    <IconButton sx={{marginLeft:"-5px"}} size='large' color='inherit'>
+                        <DiscordIcon />
                     </IconButton>
                 </Box>
             </Grid>
@@ -117,4 +117,3 @@ const ResponsiveAppBar = () => {
     );
 };
 export default ResponsiveAppBar;
-

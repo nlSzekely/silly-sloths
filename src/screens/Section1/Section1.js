@@ -101,10 +101,10 @@ export default function Section1() {
                     </Typography>
 
                     <Grid container mt={"24px"} justifyContent="space-around">
-                        <Button color='secondary' variant='contained' >
+                        <Button sx={{width:"200px", marginBottom: {xs:"16px",sm:"0px"}}} color='secondary' variant='contained'  >
                             <Typography variant="p" m={"5px 20px"}  fontWeight="bold" >BUY ON CNFT.io</Typography>
                         </Button>
-                        <Button color='secondary' variant='contained' >
+                        <Button sx={{width:"200px", marginBottom: {xs:"16px",sm:"0px"}}}  color='secondary' variant='contained' >
                             <Typography  variant="p" m={"5px 20px"}   fontWeight="bold">BUY ON jpg.store</Typography>
                         </Button>
                     </Grid>

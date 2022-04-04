@@ -15,7 +15,7 @@ export default function Section3() {
                     Here you can find all 10,000 Silly Sloths.
                 </Typography>
                 <Typography component='p' variant='p' fontSize={'20px'}>
-                    Filter them by their ID or traits, find your prfect Sloth and buy it directly form us.
+                    Filter them by their ID or traits, find your perfect
                 </Typography>
                 <Typography component='p' variant='p' fontSize={'20px'}>
                     Sloth and buy it directly form us.
