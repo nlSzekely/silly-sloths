@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
@@ -13,24 +12,19 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Grid from '@mui/material/Grid';
-import Link from '@mui/material/Link';
 import {DiscordIcon} from '../../components/Icons/Icons';
 
 const pages = ['About us', 'Mint', 'Search', 'FAQ'];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
-    const [anchorElUser, setAnchorElUser] = React.useState(null);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
     };
-    const handleOpenUserMenu = (event) => {
-        setAnchorElUser(event.currentTarget);
-    };
+
 
     const handleCloseNavMenu = (page) => {
-        setAnchorElNav(null);
 
         switch (page) {
             case 'About us':
@@ -51,7 +45,12 @@ const ResponsiveAppBar = () => {
     const scrollToSection = (section) => {
         document.querySelector(section).scrollIntoView({
             behavior: 'smooth',
+            
         });
+        setTimeout(()=>{
+            setAnchorElNav(null);
+        },1000)
+
     };
 
     return (
@@ -76,6 +75,8 @@ const ResponsiveAppBar = () => {
                     >
                         <MenuIcon />
                     </IconButton>
+
+                    {/* menu---- */}
                     <Menu
                         id='menu-appbar'
                         anchorEl={anchorElNav}
@@ -89,17 +90,18 @@ const ResponsiveAppBar = () => {
                             horizontal: 'left',
                         }}
                         open={Boolean(anchorElNav)}
-                        onClose={handleCloseNavMenu}
                         sx={{
                             display: {xs: 'block', md: 'none'},
                         }}
                     >
                         {pages.map((page) => (
-                            <MenuItem key={page} onClick={handleCloseNavMenu}>
+                            <MenuItem key={page} onClick={()=>handleCloseNavMenu(page)}>
                                 <Typography textAlign='center'>{page}</Typography>
                             </MenuItem>
                         ))}
                     </Menu>
+
+
                     <Box sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'center', padding: '20px 0'}}>
                         <img style={{maxWidth: 50}} src={logo} alt='logo' />
                     </Box>
