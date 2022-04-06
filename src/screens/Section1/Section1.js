@@ -31,31 +31,33 @@ import './Section.css';
 
 export default function Section1() {
     return (
-        <Grid container mt={"40px"} sx={{ padding: 3 }}>
+        <Grid className='section-1' container sx={{  mt:{xs:"40px", lg:"0px"} ,padding: 3, minHeight:{xs:"auto",md:"100vh"}}}>
             <Grid
                 item
                 xs={12}
                 lg={6}
                 sx={styles.contentContainer}
                 justifyContent="center"
+                alignItems={"center"}
                 container
             >
+                <Grid container justifyContent="center">
                 <Marquee
                     pauseOnHover
                     style={{...styles.mrqTop, ...styles.mrq}}
                     gradientWidth={80}
                     gradientColor={[20, 20, 20]}
                 >
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image1} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image2} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image3} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image4} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image5} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image6} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image7} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image8} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image9} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image10} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image1} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image2} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image3} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image4} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image5} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image6} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image7} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image8} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image9} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image10} />
                 </Marquee>
                 <Marquee
                     pauseOnHover
@@ -64,17 +66,19 @@ export default function Section1() {
                     gradientColor={[20, 20, 20]}
                     direction='right'
                 >
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image11} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image12} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image13} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image14} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image15} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image16} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image17} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image18} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image19} />
-                    <img className='img' style={{ maxWidth: 200, height: 'auto' }} src={image20} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image11} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image12} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image13} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image14} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image15} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image16} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image17} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image18} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image19} />
+                    <img className='img' style={{ maxWidth: 240, height: 'auto' }} src={image20} />
                 </Marquee>
+                </Grid>
+               
             </Grid>
             <Grid
                 sx={styles.contentContainer}
@@ -82,6 +86,7 @@ export default function Section1() {
                 xs={12}
                 lg={6}
                 justifyContent="center"
+                alignItems="center"
                 container
             >
                 <Grid width={"600px"}>
@@ -126,7 +131,7 @@ const styles = {
     },
     mrq:{
         overflow: 'hidden',
-        maxWidth: "700px",
+        maxWidth: "800px",
     },
     mrqTop: {
         borderTopRightRadius: 35,

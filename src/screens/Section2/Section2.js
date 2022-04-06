@@ -5,7 +5,7 @@ import MysterySloth from '../../components/MysterySloth/MysterySloth';
 
 export default function Section2() {
     return (
-        <Grid container sx={{padding: 3, marginTop: '40px'}} alignItems='center'>
+        <Grid className='section-2' container  sx={{padding: 3, marginTop: '40px', backgroundColor:"red", minHeight:{xs:"auto",md:"100vh"}}} alignItems='center'>
             <Grid sx={{...styles.contentContainer, textAlign: 'right'}} lg={6} xs={12} item flexDirection='column'>
                 <Typography variant='h3' component='h3' fontWeight='bold'>
                     MINT your own

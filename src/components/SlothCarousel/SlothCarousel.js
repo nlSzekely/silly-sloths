@@ -130,8 +130,8 @@ export default function App() {
                 style={{
                     position: 'absolute',
                     left: 0,
-                    zIndex: 100,
-                    top:20
+                    zIndex: 101,
+                    top:26
                 }}
             >
                 {hatData.map((data) => (

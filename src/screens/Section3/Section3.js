@@ -5,7 +5,7 @@ import SlothCarousel from '../../components/SlothCarousel/SlothCarousel';
 
 export default function Section3() {
     return (
-        <Grid container sx={{padding: 3, marginTop: '40px'}} alignItems='center'>
+        <Grid className='section-3' container sx={{padding: 3, marginTop: '40px'}} alignItems='center'>
             <Grid sx={{...styles.contentContainer, textAlign: 'right'}} lg={6} xs={12} item flexDirection='column'>
                 <Typography variant='h3' mb={'40px'} component='h3' fontWeight='bold'>
                     FIND your favorite

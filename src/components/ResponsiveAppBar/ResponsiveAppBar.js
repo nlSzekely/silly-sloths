@@ -16,7 +16,7 @@ import Grid from '@mui/material/Grid';
 import Link from '@mui/material/Link';
 import {DiscordIcon} from '../../components/Icons/Icons';
 
-const pages = ['About us', 'Collectibles', 'Roadmap', 'FAQ'];
+const pages = ['About us', 'Mint', 'Search', 'FAQ'];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,12 +29,29 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(event.currentTarget);
     };
 
-    const handleCloseNavMenu = () => {
+    const handleCloseNavMenu = (page) => {
         setAnchorElNav(null);
+
+        switch (page) {
+            case 'About us':
+                scrollToSection('.section-1');
+                break;
+            case 'Mint':
+                scrollToSection('.section-2');
+                break;
+            case 'Search':
+                scrollToSection('.section-3');
+                break;
+            case 'FAQ':
+                scrollToSection('.section-4');
+                break;
+        }
     };
 
-    const handleCloseUserMenu = () => {
-        setAnchorElUser(null);
+    const scrollToSection = (section) => {
+        document.querySelector(section).scrollIntoView({
+            behavior: 'smooth',
+        });
     };
 
     return (
@@ -83,15 +100,18 @@ const ResponsiveAppBar = () => {
                             </MenuItem>
                         ))}
                     </Menu>
-                </Box>
-
-                <Box sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'center', padding: '20px 0'}}>
-                    <img style={{maxWidth: 50}} src={logo} alt='logo' />
+                    <Box sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'center', padding: '20px 0'}}>
+                        <img style={{maxWidth: 50}} src={logo} alt='logo' />
+                    </Box>
                 </Box>
 
                 <Box sx={{display: {xs: 'none', md: 'flex'}, marginLeft: 8}}>
                     {pages.map((page) => (
-                        <Button key={page} onClick={handleCloseNavMenu} sx={{color: 'white', borderRadius: 0, px: 4}}>
+                        <Button
+                            key={page}
+                            onClick={() => handleCloseNavMenu(page)}
+                            sx={{color: 'white', borderRadius: 0, px: 4}}
+                        >
                             <Typography fontSize='20px' fontWeight={500}>
                                 {page}
                             </Typography>
@@ -108,7 +128,7 @@ const ResponsiveAppBar = () => {
                     <IconButton size='large' color='inherit'>
                         <FacebookIcon />
                     </IconButton>
-                    <IconButton sx={{marginLeft:"-5px"}} size='large' color='inherit'>
+                    <IconButton sx={{marginLeft: '-5px'}} size='large' color='inherit'>
                         <DiscordIcon />
                     </IconButton>
                 </Box>
