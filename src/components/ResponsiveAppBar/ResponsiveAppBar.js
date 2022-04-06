@@ -13,6 +13,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import Grid from '@mui/material/Grid';
 import {DiscordIcon} from '../../components/Icons/Icons';
+import {Link} from '@mui/material';
 
 const pages = ['About us', 'Mint', 'Search', 'FAQ'];
 
@@ -23,9 +24,7 @@ const ResponsiveAppBar = () => {
         setAnchorElNav(event.currentTarget);
     };
 
-
     const handleCloseNavMenu = (page) => {
-
         switch (page) {
             case 'About us':
                 scrollToSection('.section-1');
@@ -45,12 +44,10 @@ const ResponsiveAppBar = () => {
     const scrollToSection = (section) => {
         document.querySelector(section).scrollIntoView({
             behavior: 'smooth',
-            
         });
-        setTimeout(()=>{
+        setTimeout(() => {
             setAnchorElNav(null);
-        },1000)
-
+        }, 1000);
     };
 
     return (
@@ -92,16 +89,14 @@ const ResponsiveAppBar = () => {
                         open={Boolean(anchorElNav)}
                         sx={{
                             display: {xs: 'block', md: 'none'},
-                           
                         }}
                     >
                         {pages.map((page) => (
-                            <MenuItem sx={{ backgroundColor:"green"}} key={page} onClick={()=>handleCloseNavMenu(page)}>
+                            <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
                                 <Typography textAlign='center'>{page}</Typography>
                             </MenuItem>
                         ))}
                     </Menu>
-
 
                     <Box sx={{display: {xs: 'flex', md: 'none'}, justifyContent: 'center', padding: '20px 0'}}>
                         <img style={{maxWidth: 50}} src={logo} alt='logo' />
@@ -122,16 +117,30 @@ const ResponsiveAppBar = () => {
                     ))}
                 </Box>
                 <Box sx={{justifySelf: 'flex-end', alignSelf: 'center'}}>
-                    <IconButton size='large' color='inherit'>
-                        <TwitterIcon />
+                    <IconButton target="_blank" href='https://twitter.com/sillyslothklub' size='large' color='inherit'>
+                        <TwitterIcon color='#fffff' />
                     </IconButton>
-                    <IconButton size='large' color='inherit'>
+
+                    <IconButton  target="_blank" href='https://www.instagram.com/sillysloth_club/' size='large' color='inherit'>
                         <InstagramIcon />
                     </IconButton>
-                    <IconButton size='large' color='inherit'>
+
+                    <IconButton
+                        href='https://www.facebook.com/Silly-Sloth-Club-100329609322351/'
+                        size='large'
+                        color='inherit'
+                        target="_blank"
+                    >
                         <FacebookIcon />
                     </IconButton>
-                    <IconButton sx={{marginLeft: '-5px'}} size='large' color='inherit'>
+
+                    <IconButton
+                     target="_blank"
+                        href='https://discord.gg/N6yUrEe7Jx'
+                        sx={{marginLeft: '-5px'}}
+                        size='large'
+                        color='inherit'
+                    >
                         <DiscordIcon />
                     </IconButton>
                 </Box>

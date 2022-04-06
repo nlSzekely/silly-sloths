@@ -31,7 +31,8 @@ import './Section.css';
 
 export default function Section1() {
     return (
-        <Grid className='section-1' container sx={{  mt:{xs:"40px", lg:"0px"} ,padding: 3, minHeight:{xs:"auto",md:"100vh"}}}>
+        <Grid className='section-1' container 
+        sx={{  mt:{xs:"40px", lg:"0px"} ,padding: 3, minHeight:{xs:"auto",md:"100vh"},backgroundColor:"#1a1e26"}}>
             <Grid
                 item
                 xs={12}

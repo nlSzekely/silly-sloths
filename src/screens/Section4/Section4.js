@@ -44,8 +44,17 @@ const data = [
 
 export default function Section4() {
     return (
-        <Grid mb={'80px'} container sx={{padding: 3, marginTop: '40px'}} lg={10} xs={12} justifyContent='center'>
-            <Typography mb={'40px'} color='white' variant='h3' component='h3' fontWeight='bold'>
+        <Grid 
+        container 
+        sx={{padding: 3, minHeight: {md: '100vh'}}} 
+        lg={10} 
+        xs={12}
+        flexDirection="column" 
+        alignItems="center"
+        className='section-4'
+        mb={"40px"}
+        >
+            <Typography mt={'40px'} color='white' variant='h3' component='h3' fontWeight='bold'>
                 FAQ
             </Typography>
             {data.map((item) => (

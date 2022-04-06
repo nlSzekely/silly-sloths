@@ -8,6 +8,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {DiscordIcon, CardanoLogo} from '../../components/Icons/Icons';
+import { Link } from '@mui/material';
 
 export default function Footer() {
     return (
@@ -33,18 +34,32 @@ export default function Footer() {
             </Grid>
 
             <Grid item sx={{color: 'white', marginRight: 5}}>
-                <IconButton size='large' color='inherit'>
-                    <TwitterIcon />
-                </IconButton>
-                <IconButton size='large' color='inherit'>
-                    <InstagramIcon />
-                </IconButton>
-                <IconButton size='large' color='inherit'>
-                    <FacebookIcon />
-                </IconButton>
-                <IconButton sx={{marginLeft: '-5px'}} size='large' color='inherit'>
-                    <DiscordIcon />
-                </IconButton>
+            <IconButton target="_blank" href='https://twitter.com/sillyslothklub' size='large' color='inherit'>
+                        <TwitterIcon color='#fffff' />
+                    </IconButton>
+
+                    <IconButton  target="_blank" href='https://www.instagram.com/sillysloth_club/' size='large' color='inherit'>
+                        <InstagramIcon />
+                    </IconButton>
+
+                    <IconButton
+                        href='https://www.facebook.com/Silly-Sloth-Club-100329609322351/'
+                        size='large'
+                        color='inherit'
+                        target="_blank"
+                    >
+                        <FacebookIcon />
+                    </IconButton>
+
+                    <IconButton
+                     target="_blank"
+                        href='https://discord.gg/N6yUrEe7Jx'
+                        sx={{marginLeft: '-5px'}}
+                        size='large'
+                        color='inherit'
+                    >
+                        <DiscordIcon />
+                    </IconButton>
             </Grid>
         </Grid>
     );

@@ -26,9 +26,8 @@ export default function NestedList({
     return (
         <Grid container>
             <Grid
-                px={'24px'}
                 py={'10px'}
-                mt={"24px"}
+                mt={'24px'}
                 sx={styles.container}
                 onClick={handleClick}
                 container
@@ -43,7 +42,7 @@ export default function NestedList({
                 </div>
             </Grid>
             <Collapse in={open} timeout='auto' unmountOnExit>
-                <Typography px={'20px'} mt={'24px'} variant="p" component="p" >
+                <Typography px={'20px'} mt={'24px'} variant='p' component='p'>
                     {description}
                 </Typography>
             </Collapse>
@@ -55,15 +54,19 @@ const styles = {
     container: {
         backgroundColor: '#2E3D4B',
         borderRadius: '16px',
-        cursor:"pointer"
+        cursor: 'pointer',
+        px: {
+            xs: '14px',
+            sm: '24px',
+        },
     },
     iconContainer: {
         backgroundColor: 'white',
         borderRadius: '6px',
-        width: '30px',
+        width: '23px',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        height: '30px',
+        height: '23px',
     },
 };
