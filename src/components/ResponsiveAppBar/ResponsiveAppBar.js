@@ -92,10 +92,11 @@ const ResponsiveAppBar = () => {
                         open={Boolean(anchorElNav)}
                         sx={{
                             display: {xs: 'block', md: 'none'},
+                           
                         }}
                     >
                         {pages.map((page) => (
-                            <MenuItem key={page} onClick={()=>handleCloseNavMenu(page)}>
+                            <MenuItem sx={{ backgroundColor:"green"}} key={page} onClick={()=>handleCloseNavMenu(page)}>
                                 <Typography textAlign='center'>{page}</Typography>
                             </MenuItem>
                         ))}

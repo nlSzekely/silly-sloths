@@ -5,18 +5,18 @@ import MysterySloth from '../../components/MysterySloth/MysterySloth';
 
 export default function Section2() {
     return (
-        <Grid className='section-2' container  sx={{padding: 3, marginTop: '40px', backgroundColor:"red", minHeight:{xs:"auto",md:"100vh"}}} alignItems='center'>
-            <Grid sx={{...styles.contentContainer, textAlign: 'right'}} lg={6} xs={12} item flexDirection='column'>
-                <Typography variant='h3' component='h3' fontWeight='bold'>
+        <Grid className='section-2' container  sx={{ padding: 3,backgroundColor:"red", minHeight:{xs:"auto",md:"100vh"}}} alignItems='center'>
+            <Grid sx={{...styles.contentContainer}} lg={6} xs={12} item flexDirection='column'>
+                <Typography sx={styles.title} variant='h3' component='h3' fontWeight='bold'>
                     MINT your own
                 </Typography>
-                <Typography mb={'40px'} variant='h3' component='h3' fontWeight='bold'>
+                <Typography sx={styles.title} mb={'40px'} variant='h3' component='h3' fontWeight='bold'>
                     Silly Sloth
                 </Typography>
-                <Typography mb={'8px'} component='p' variant='p' fontSize={'20px'}>
+                <Typography sx={styles.text} component='p' mb={'8px'} fontSize={'20px'} variant='p'>
                     Buy a random Silly Sloth directly from us!
                 </Typography>
-                <Typography component='p' variant='p' fontSize={'20px'}>
+                <Typography sx={styles.text} component='p' fontSize={'20px'} variant='p'>
                     You can choose the plan that suits your needs the best.
                 </Typography>
             </Grid>
@@ -38,8 +38,13 @@ const styles = {
     contentContainer: {
         padding: {
             lg: '0 50px',
-            xs: '0 10px',
+            xs: '24px 10px 0px 10px',
         },
+        textAlign:{
+            xs:"center",
+            sm:"right"
+        }
+
     },
     mrq: {
         overflow: 'hidden',
@@ -53,4 +58,10 @@ const styles = {
         borderBottomRightRadius: 35,
         borderBottomLeftRadius: 35,
     },
+    text:{
+        textAlign:{
+            xs:"left",
+            sm:"right"
+        }
+    }
 };
