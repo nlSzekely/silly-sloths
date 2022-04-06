@@ -11,7 +11,7 @@ export default function MysterySloth({quantity = 1, price = 30, singleSlothImg =
     return (
         <Grid sx={{position: 'relative', textAlign: 'center', width: '230px'}}>
             <Grid sx={{position: 'relative'}}>
-                <img width={singleSlothImg ? '100px' : '198px'} src={singleSlothImg ? singleSloth : multiSloth} />
+                <img width={singleSlothImg ? '150px' : '230px'} src={singleSlothImg ? singleSloth : multiSloth} />
                 <Typography
                     fontWeight={'bold'}
                     sx={{
