@@ -1,6 +1,6 @@
-import {createTheme, responsiveFontSizes} from '@mui/material/styles';
-import {green, purple} from '@mui/material/colors';
-import {ThemeProvider, CssBaseline} from '@mui/material';
+import { createTheme, responsiveFontSizes } from '@mui/material/styles';
+import { green, purple } from '@mui/material/colors';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import Grid from '@mui/material/Grid';
 
 import NavBar from './components/HideAppBar/HideAppBar';
@@ -10,7 +10,7 @@ import Section2 from './screens/Section2/Section2';
 import Section3 from './screens/Section3/Section3';
 import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
-import SlothCarousel from "./components/SlothCarousel/SlothCarousel"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 let theme = createTheme({
     palette: {
@@ -55,18 +55,30 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
+const MainPage = () => {
+    return (
+        <Grid sx={styles.container}>
+            <ScrollTop />
+            <NavBar />
+            <Section1 />
+            <Section2 />
+            <Section3 />
+            <Section4 />
+            <Footer />
+        </Grid>
+    );
+};
+
 function App() {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline>
-                <Grid sx={styles.container}>
-                    <NavBar />
-                    <Section1 />
-                    <Section2 />
-                    <Section3 />
-                    <Section4 />
-                    <Footer />
-                </Grid>
+                <BrowserRouter>
+                    <Routes>
+                        <Route path="/" element={<MainPage />} />
+                    </Routes>
+                </BrowserRouter>,
+
             </CssBaseline>
 
         </ThemeProvider>
@@ -76,8 +88,8 @@ function App() {
 const styles = {
     container: {
         width: '100%',
-        backgroundColor:"#1a1e26"
-        
+        backgroundColor: "#1a1e26"
+
     },
 };
 
