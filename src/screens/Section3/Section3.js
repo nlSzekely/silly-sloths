@@ -2,6 +2,7 @@ import React from 'react';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import SlothCarousel from '../../components/SlothCarousel/SlothCarousel';
+import SearchInput from "../../components/SearchInput/SearchInput";
 
 export default function Section3() {
     return (
@@ -25,6 +26,8 @@ export default function Section3() {
                 <Typography sx={styles.text} component='p' variant='p' fontSize={'20px'}>
                     Sloth and buy it directly form us.
                 </Typography>
+                <SearchInput/>
+                
             </Grid>
             <Grid sx={{position: 'relative'}} lg={6} xs={12} item container flexDirection='column'>
                 <SlothCarousel />

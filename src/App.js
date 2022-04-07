@@ -1,6 +1,7 @@
 import { createTheme, responsiveFontSizes } from '@mui/material/styles';
 import { green, purple } from '@mui/material/colors';
 import { ThemeProvider, CssBaseline } from '@mui/material';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Grid from '@mui/material/Grid';
 
 import NavBar from './components/HideAppBar/HideAppBar';
@@ -10,7 +11,7 @@ import Section2 from './screens/Section2/Section2';
 import Section3 from './screens/Section3/Section3';
 import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Search from "./screens/Search/Search";
 
 let theme = createTheme({
     palette: {
@@ -55,6 +56,14 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
+const NotFound = () =>{
+    return (
+        <div>
+            not found
+        </div>
+    )
+}
+
 const MainPage = () => {
     return (
         <Grid sx={styles.container}>
@@ -76,8 +85,11 @@ function App() {
                 <BrowserRouter>
                     <Routes>
                         <Route path="/" element={<MainPage />} />
+                        <Route path="/search" element={<Search />} />
+                        <Route path="*" element={<NotFound />} />
+
                     </Routes>
-                </BrowserRouter>,
+                </BrowserRouter>
 
             </CssBaseline>
 
