@@ -44,23 +44,28 @@ const data = [
 
 export default function Section4() {
     return (
-        <Grid 
-        container 
-        item
-        sx={{padding: 3, minHeight: {md: '100vh'}}} 
-        lg={10} 
-        xs={12}
-        flexDirection="column" 
-        alignItems="center"
-        className='section-4'
-        mb={"40px"}
+        <Grid
+            container
+            item
+            sx={{
+                padding: 3,
+                minHeight: {md: '100vh'},
+                background: 'rgb(14,17,22)',
+                background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)',
+            }}
+            flexDirection='column'
+            justifyContent='center'
+            className='section-4'
         >
-            <Typography mt={'40px'} color='white' variant='h3' component='h3' fontWeight='bold'>
-                FAQ
-            </Typography>
-            {data.map((item) => (
-                <Expand key={item.id} title={item.title} description={item.description} />
-            ))}
+            <Grid lg={10} xs={12} item >
+                
+                <Typography mb="40px" color='white' textAlign="center" variant='h3'  component='h3' fontWeight='bold'>
+                    FAQ
+                </Typography>
+                {data.map((item) => (
+                    <Expand key={item.id} title={item.title} description={item.description} />
+                ))}
+            </Grid>
         </Grid>
     );
 }

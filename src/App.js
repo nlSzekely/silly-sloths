@@ -123,7 +123,8 @@ function App() {
 const styles = {
     container: {
         width: '100%',
-        backgroundColor: '#1a1e26',
+        background: 'rgb(14,17,22)',
+        background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
     },
 };
 

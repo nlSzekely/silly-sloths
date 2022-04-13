@@ -53,7 +53,7 @@ export default function Footer() {
 
                     <IconButton
                      target="_blank"
-                        href='https://discord.gg/N6yUrEe7Jx'
+                        href='https://discord.gg/H6zkydZMZA'
                         sx={{marginLeft: '-5px'}}
                         size='large'
                         color='inherit'

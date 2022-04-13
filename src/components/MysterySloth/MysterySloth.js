@@ -17,7 +17,7 @@ export default function MysterySloth({quantity = 1, price = 30, singleSlothImg =
                     sx={{
                         position: 'absolute',
                         color: 'white',
-                        top: 36,
+                        top: singleSlothImg ? 70 : 36,
                         left: '50%',
                         transform: 'translateX(-50%)',
                         fontSize: '30px',

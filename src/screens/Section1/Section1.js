@@ -32,7 +32,10 @@ import './Section.css';
 export default function Section1() {
     return (
         <Grid className='section-1' container 
-        sx={{  mt:{xs:"40px", lg:"0px"} ,padding: 3, minHeight:{xs:"auto",md:"100vh"},backgroundColor:"#1a1e26"}}>
+        sx={{  padding: 3 ,mt:{xs:"40px", lg:"0px"} , minHeight:{xs:"auto",md:"100vh"},
+        background: 'rgb(14,17,22)',
+        background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
+        }}>
             <Grid
                 item
                 xs={12}
@@ -124,15 +127,15 @@ export default function Section1() {
 
 
 const styles = {
-    contentContainer:{
+    contentContainer: {
         padding: {
             lg: '0 50px',
-            xs: '0 10px'
+            xs: '0 10px',
         },
     },
-    mrq:{
+    mrq: {
         overflow: 'hidden',
-        maxWidth: "800px",
+        maxWidth: '800px',
     },
     mrqTop: {
         borderTopRightRadius: 35,
@@ -141,5 +144,5 @@ const styles = {
     mrqBottom: {
         borderBottomRightRadius: 35,
         borderBottomLeftRadius: 35,
-    }
+    },
 };

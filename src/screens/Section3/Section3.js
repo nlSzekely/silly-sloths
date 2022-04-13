@@ -9,7 +9,10 @@ export default function Section3() {
         <Grid
             className='section-3'
             container
-            sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'}, backgroundColor: '#1a1e26'}}
+            sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'}, 
+            background: 'rgb(14,17,22)',
+            background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
+        }}
             alignItems='center'
         >
             <Grid sx={styles.contentContainer} lg={6} xs={12} item flexDirection='column'>
@@ -37,11 +40,11 @@ export default function Section3() {
 
                         width:{
                             xs:'300px',
-                            sm:'400px'
+                            sm:'500px'
 
 
                         } ,
-                        height: '180px',
+                        height: '220px',
                         position: 'absolute',
                         left:"50%",
                         transform:"translateX(-51%)",

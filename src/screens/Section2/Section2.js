@@ -6,9 +6,13 @@ import MysterySloth from '../../components/MysterySloth/MysterySloth';
 export default function Section2() {
     return (
         <Grid
+  
             className='section-2'
             container
-            sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'}}}
+            sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'},
+            background: 'rgb(14,17,22)',
+            background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
+        }}
             alignItems='center'
         >
             <Grid sx={{...styles.contentContainer, marginTop:{xs:0, md:"50px"}}} lg={6} xs={12} item flexDirection='column'>
@@ -61,6 +65,7 @@ export default function Section2() {
 
 const styles = {
     contentContainer: {
+      
         padding: {
             lg: '0 50px',
             xs: '24px 10px 0px 10px',
