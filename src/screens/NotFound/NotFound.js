@@ -46,7 +46,7 @@ const styles = {
     },
     img:{
         position:'absolute',
-        width:'60%',
+        width:'75%',
         display:'block',
         maxWidth:' 500px',
         height: 'auto',
