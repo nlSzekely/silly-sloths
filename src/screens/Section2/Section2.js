@@ -11,7 +11,7 @@ export default function Section2() {
             sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'}}}
             alignItems='center'
         >
-            <Grid sx={{...styles.contentContainer}} lg={6} xs={12} item flexDirection='column'>
+            <Grid sx={{...styles.contentContainer, marginTop:{xs:0, md:"50px"}}} lg={6} xs={12} item flexDirection='column'>
                 <Typography sx={styles.title} variant='h3' component='h3' fontWeight='bold'>
                     MINT your own
                 </Typography>
@@ -67,7 +67,7 @@ const styles = {
         },
         textAlign: {
             xs: 'center',
-            md: 'right',
+            lg: 'right',
         },
     },
     mrq: {
@@ -85,7 +85,8 @@ const styles = {
     text: {
         textAlign: {
             xs: 'left',
-            md: 'right',
+            md:"center",
+            lg: 'right',
         },
     },
 };

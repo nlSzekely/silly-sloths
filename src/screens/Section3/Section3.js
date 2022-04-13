@@ -26,7 +26,7 @@ export default function Section3() {
                 <Typography sx={styles.text} component='p' variant='p' fontSize={'20px'}>
                     Sloth and buy it directly form us.
                 </Typography>
-                <SearchInput/>
+                {/* <SearchInput/> */}
                 
             </Grid>
             <Grid sx={{position: 'relative'}} lg={6} xs={12} item container flexDirection='column'>
@@ -82,13 +82,14 @@ const styles = {
     text: {
         textAlign: {
             xs: 'left',
-            md: 'right',
+            md:"center",
+            lg: 'right',
         },
     },
     title:{
         textAlign: {
             xs: 'center',
-            md: 'right',
+            lg: 'right',
         },
     }
 };

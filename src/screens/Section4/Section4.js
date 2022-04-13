@@ -15,7 +15,7 @@ const data = [
         id: '2',
         title: 'Why the Cardano blockchain?',
         description:
-            'Cardano is a proof of stake blockchain platform and it provides unparallel security to dApps. Cardano is the most environmentally friendly blockchain protocol on a global scale without compromising security. Cardano marketplace value has been ever-rising and it is called to be one of the Ethereum killers.',
+            'Cardano is a proof of stake blockchain platform and it provides unparalleled  security to dApps. Cardano is the most environmentally friendly blockchain protocol on a global scale without compromising security. Cardano marketplace value has been ever-rising and it is called to be one of the Ethereum killers.',
     },
     {
         id: '3',
@@ -27,13 +27,13 @@ const data = [
         id: '4',
         title: 'What wallet can I use?',
         description:
-            'Cardano wallets are accepted, only use Yoroi/Daedalus/Nami/Adalite wallets. If you send your ADA direcly from a Centralized exchange (CEX) like Binance, Coinbase, Kucoin, your ADA will be lost!!',
+            'Cardano wallets are accepted, only use Yoroi/Daedalus/Nami/Adalite wallets. If you send your ADA directly from a Centralized exchange (CEX) like Binance, Coinbase, Kucoin, your ADA will be lost!!',
     },
     {
         id: '5',
-        title: 'What I get for my ADA?',
+        title: 'What do I get for my ADA?',
         description:
-            'You will get two .png file in 8000x8000 resolution, one with background and one without it, in case if you want to put it on something. (T-shirt, cup, on your site, etc.) And if you are super lucky you also get a .gif file, where the Sloths become alive. Only 100 of these exist but no one knows witch particular NFT holds these subfiles.',
+            'You will get two .png files in 8000x8000 resolution, one with background and one without it, in case you want to put it on something. (T-shirt, cup, on your site, etc.) And if you are super lucky you also get a .gif file, where the Sloths become alive. Only 100 of these exist but no one knows which particular NFT holds these subfiles.',
     },
     {
         id: '6',
@@ -46,6 +46,7 @@ export default function Section4() {
     return (
         <Grid 
         container 
+        item
         sx={{padding: 3, minHeight: {md: '100vh'}}} 
         lg={10} 
         xs={12}
