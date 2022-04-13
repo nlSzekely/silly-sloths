@@ -14,6 +14,8 @@ import Section3 from './screens/Section3/Section3';
 import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
 import Search from './screens/Search/Search';
+import NotFound from './screens/NotFound/NotFound';
+
 import {getFirestore} from 'firebase/firestore';
 
 const firebaseConfig = {
@@ -75,21 +77,18 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-const NotFound = () => {
-    return <div>not found</div>;
-};
 
 const MainPage = () => {
-    // useEffect(async() => {
+    useEffect(async() => {
 
-    //     const conditions = [where("mouth", "==", "Calm"), where("body", "==", "Gold" )];
-    //     const q = query(collection(db, 'sloths'),...conditions);
-    //     const querySnapshot = await getDocs(q);
-    //     querySnapshot.forEach((doc) => {
-    //         // doc.data() is never undefined for query doc snapshots
-    //         console.log(doc.id, " => ", doc.data());
-    //       });
-    // }, []);
+        const conditions = [where("Mouth", "==", "Calm"), where("Body", "==", "Gold" )];
+        const q = query(collection(db, 'sloths'),...conditions);
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+          });
+    }, []);
 
     return (
         <Grid sx={styles.container}>
@@ -123,8 +122,7 @@ function App() {
 const styles = {
     container: {
         width: '100%',
-        background: 'rgb(14,17,22)',
-        background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
+        backgroundColor: 'rgb(14,17,22)',
     },
 };
 
