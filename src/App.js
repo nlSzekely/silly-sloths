@@ -16,18 +16,18 @@ import Footer from './components/Footer/Footer';
 import Search from './screens/Search/Search';
 import {getFirestore} from 'firebase/firestore';
 
-// const firebaseConfig = {
-//     apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
-//     authDomain: 'sillyslothclub-857b2.firebaseapp.com',
-//     databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
-//     projectId: 'sillyslothclub-857b2',
-//     storageBucket: 'sillyslothclub-857b2.appspot.com',
-//     messagingSenderId: '218793570529',
-//     appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
-//     measurementId: 'G-D24ZT79DDD',
-// };
+const firebaseConfig = {
+    apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
+    authDomain: 'sillyslothclub-857b2.firebaseapp.com',
+    databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'sillyslothclub-857b2',
+    storageBucket: 'sillyslothclub-857b2.appspot.com',
+    messagingSenderId: '218793570529',
+    appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
+    measurementId: 'G-D24ZT79DDD',
+};
 
-// initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
 
 // Initialize Firebase
 const db = getFirestore();
