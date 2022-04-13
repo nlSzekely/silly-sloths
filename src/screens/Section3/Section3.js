@@ -3,16 +3,21 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import SlothCarousel from '../../components/SlothCarousel/SlothCarousel';
 import SearchInput from "../../components/SearchInput/SearchInput";
+import { Box } from '@mui/system';
+
+import brb from "../../assets/brb.png"
 
 export default function Section3() {
     return (
         <Grid
             className='section-3'
             container
-            sx={{padding: 3, minHeight: {xs: 'auto', md: '100vh'}, 
-            background: 'rgb(14,17,22)',
-            background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)'
-        }}
+            sx={{
+                padding: 3,
+                minHeight: {xs: 'auto', md: '100vh'},
+                background: 'rgb(14,17,22)',
+                background: 'linear-gradient(0deg, rgba(14,17,22,1) 0%, rgba(19,23,29,1) 100%)',
+            }}
             alignItems='center'
         >
             <Grid sx={styles.contentContainer} lg={6} xs={12} item flexDirection='column'>
@@ -29,27 +34,29 @@ export default function Section3() {
                 <Typography sx={styles.text} component='p' variant='p' fontSize={'20px'}>
                     Sloth and buy it directly form us.
                 </Typography>
+                <Grid sx={{position: 'absolute', width: '100%', height: '100%', inset: 0, textAlign: {lg:'right', xs:"center"}, opacity:0.7}}>
+                    <Box mt={5} sx={{marginRight:{xs:0, md:15}}} >
+                        <img style={{maxWidth: '250px'}} src={brb} />
+                    </Box>
+                </Grid>
                 {/* <SearchInput/> */}
-                
             </Grid>
             <Grid sx={{position: 'relative'}} lg={6} xs={12} item container flexDirection='column'>
                 <SlothCarousel />
                 <Grid
                     sx={{
-                        backgroundColor:' #394C5F',
+                        backgroundColor: ' #394C5F',
 
-                        width:{
-                            xs:'300px',
-                            sm:'500px'
-
-
-                        } ,
+                        width: {
+                            xs: '300px',
+                            sm: '500px',
+                        },
                         height: '220px',
                         position: 'absolute',
-                        left:"50%",
-                        transform:"translateX(-51%)",
+                        left: '50%',
+                        transform: 'translateX(-51%)',
                         bottom: 0,
-                        borderRadius:"20px"
+                        borderRadius: '20px',
                     }}
                 ></Grid>
             </Grid>
@@ -59,7 +66,7 @@ export default function Section3() {
 
 const styles = {
     contentContainer: {
-      
+        position:"relative",
         padding: {
             lg: '0 50px',
             xs: '0 10px',
