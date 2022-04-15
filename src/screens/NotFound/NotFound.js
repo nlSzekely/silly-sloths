@@ -31,14 +31,14 @@ const styles = {
     },
     innerContainer: {
         backgroundColor: '#394C5F',
-        maxWidth: '800px',
+        maxWidth: '630px',
         borderRadius: {
             xs:'60px',
             md:'80px'
         } ,
         maxHeight:{
             xs:'200px',
-            sm: '400px'
+            sm: '350px'
         },
     },
     text:{
