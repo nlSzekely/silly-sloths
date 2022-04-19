@@ -56,7 +56,7 @@ const ResponsiveAppBar = () => {
                 {/* Logo --- */}
                 <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0', alignItems: 'center'}}>
                     <img style={{maxWidth: 50}} src={logo} alt='logo' />
-                    <Typography fontSize={'18px'} fontWeight='bold' ml={2}>
+                    <Typography component={'p'} variant='p' fontSize={'18px'} fontWeight='bold' ml={2}>
                         Silly Sloth Club
                     </Typography>
                 </Box>
