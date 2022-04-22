@@ -1,17 +1,29 @@
 import React from 'react';
 import {Grid, Typography, Button} from '@mui/material';
 
-export default function SlothCard({sloth}) {
-console.log("🚀 ~ file: SlothCard.js ~ line 5 ~ SlothCard ~ sloth", sloth)
-   
-    return (
-        <Grid sx={styles.card} p={'24px'}  container flexDirection={'column'} justifyContent='flex-end'  >
-            <Grid item container justifyContent='center'>
+const colors = {
+    'Light grey': '#CDCDCF',
+    'Terracotta': '#E2A293',
+    'Bubble gum': '#D6BDC2',
+    'Levander': '#BBAEC1',
+    'Lilac': '#9AA1C1',
+    'Baby': '#87C0DD',
+    'Air force': '#6696A3',
+    'Olive': '#B8C6AB',
+    'Moss': '#8DB7A5',
+    'Emerald': '#40B59E',
+};
 
-            <img width={'150px'}  src={sloth.imgUrl} />
+export default function SlothCard({sloth}) {
+    console.log('🚀 ~ file: SlothCard.js ~ line 5 ~ SlothCard ~ sloth', sloth);
+
+    return (
+        <Grid sx={styles.card} p={'24px'} container flexDirection={'column'} justifyContent='flex-end'>
+            <Grid justifyContent='center' style={{...styles.imgBackground, backgroundColor: colors[sloth?.Background]}}>
+                <img style={styles.img}  src={sloth.imgUrl} />
             </Grid>
             <Typography fontWeight={'bold'} fontSize={16} color='#fff'>
-                {"#" + sloth?.Name?.split('#')[1]}
+                {'#' + sloth?.Name?.split('#')[1]}
             </Typography>
             <Grid container>
                 <Grid xs={5.5} sx={styles.infoLabel} item container flexDirection='column'>
@@ -39,7 +51,6 @@ console.log("🚀 ~ file: SlothCard.js ~ line 5 ~ SlothCard ~ sloth", sloth)
                     </Button>
                 </Grid>
             </Grid>
-          
         </Grid>
     );
 }
@@ -49,18 +60,28 @@ const styles = {
         height: '350px',
         width: '250px',
         backgroundColor: '#2F3E4D',
-        borderRadius:'8px',
-        marginRight:'16px',
-        marginBottom: '16px'
+        borderRadius: '8px',
+        marginRight: '16px',
+        marginBottom: '16px',
     },
     infoLabel: {
         backgroundColor: '#2A333D',
         borderRadius: '15px',
         padding: '4px 0',
     },
-    imgBackground:{
+    imgBackground: {
         height: '130px',
-        backgroundColor: '#BBAEC1',
-        borderRadius: '8px'
+        borderRadius: '8px',
+        position:'relative',
+        marginBottom:'8px'
+    },
+    img:{
+        position:'absolute',
+        bottom:0,
+        width:200,
+        display:'block',
+        left:'50%',
+        transform:'translateX(-50%)',
+
     }
 };

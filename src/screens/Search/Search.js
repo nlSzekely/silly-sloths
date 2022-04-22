@@ -31,20 +31,25 @@ const db = getFirestore();
 
 export default function Search() {
     const [data, setData] = useState([]);
-    // useEffect(async () => {
-    //     const fireStoreData = []
-    //     // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold')];
-    //     const conditions = [];
+    useEffect(async () => {
+        const fireStoreData = []
+        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold')];
+        const conditions = [];
 
-    //     const q = query(collection(db, 'sloths'), ...conditions);
-    //     const querySnapshot = await getDocs(q);
-    //     querySnapshot.forEach((doc) => {
-    //         // doc.data() is never undefined for query doc snapshots
-    //         // console.log(doc.id, ' => ', doc.data());
-    //         fireStoreData.push(doc.data());
-    //     });
-    //     setData(fireStoreData)
-    // }, []);
+        const q = query(collection(db, 'sloths'), ...conditions);
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, ' => ', doc.data());
+            fireStoreData.push(doc.data());
+        });
+        setData(fireStoreData)
+    }, []);
+
+    useEffect(()=>{
+        console.log("🚀 ~ file: Search.js ~ line 52 ~ Search ~ data", data)
+
+    },[data])
 
     return (
         <div style={styles.container}>
@@ -53,7 +58,7 @@ export default function Search() {
                     {/* <SearchBar/> */}
                     <Grid item container>
                         <Grid item container justifyContent='center'>
-                            {Array.from(Array(10).keys()).map((item) => (
+                            {data.map((item) => (
                                 <SlothCard sloth={item} />
                             ))}
                         </Grid>
