@@ -15,36 +15,36 @@ import SlothCard from '../../components/SlothCard/SlothCard';
 
 import {getFirestore} from 'firebase/firestore';
 
-const firebaseConfig = {
-    apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
-    authDomain: 'sillyslothclub-857b2.firebaseapp.com',
-    databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
-    projectId: 'sillyslothclub-857b2',
-    storageBucket: 'sillyslothclub-857b2.appspot.com',
-    messagingSenderId: '218793570529',
-    appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
-    measurementId: 'G-D24ZT79DDD',
-};
+// const firebaseConfig = {
+//     apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
+//     authDomain: 'sillyslothclub-857b2.firebaseapp.com',
+//     databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
+//     projectId: 'sillyslothclub-857b2',
+//     storageBucket: 'sillyslothclub-857b2.appspot.com',
+//     messagingSenderId: '218793570529',
+//     appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
+//     measurementId: 'G-D24ZT79DDD',
+// };
 
-initializeApp(firebaseConfig);
-const db = getFirestore();
+// initializeApp(firebaseConfig);
+// const db = getFirestore();
 
 export default function Search() {
     const [data, setData] = useState([]);
-    useEffect(async () => {
-        const fireStoreData = []
-        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold')];
-        const conditions = [];
+    // useEffect(async () => {
+    //     const fireStoreData = []
+    //     // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold')];
+    //     const conditions = [];
 
-        const q = query(collection(db, 'sloths'), ...conditions);
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            // console.log(doc.id, ' => ', doc.data());
-            fireStoreData.push(doc.data());
-        });
-        setData(fireStoreData)
-    }, []);
+    //     const q = query(collection(db, 'sloths'), ...conditions);
+    //     const querySnapshot = await getDocs(q);
+    //     querySnapshot.forEach((doc) => {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         // console.log(doc.id, ' => ', doc.data());
+    //         fireStoreData.push(doc.data());
+    //     });
+    //     setData(fireStoreData)
+    // }, []);
 
     useEffect(()=>{
         console.log("🚀 ~ file: Search.js ~ line 52 ~ Search ~ data", data)
@@ -68,6 +68,30 @@ export default function Search() {
         </div>
     );
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const Header = () => {
     return (
