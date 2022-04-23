@@ -20,7 +20,7 @@ export default function SlothCard({sloth}) {
     return (
         <Grid sx={styles.card} p={'24px'} container flexDirection={'column'} justifyContent='flex-end'>
             <Grid justifyContent='center' style={{...styles.imgBackground, backgroundColor: colors[sloth?.Background]}}>
-                <img style={styles.img}  src={sloth.imgUrl} />
+                {/* <img style={styles.img}  src={sloth.imgUrl} /> */}
             </Grid>
             <Typography fontWeight={'bold'} fontSize={16} color='#fff'>
                 {'#' + sloth?.Name?.split('#')[1]}

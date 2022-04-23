@@ -7,49 +7,78 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {DiscordIcon} from '../../components/Icons/Icons';
 import ResponsiveDrawer from '../../components/ResponsiveDrawer/ResponsiveDraver';
-import {collection, query, getDocs, where} from 'firebase/firestore';
+import {collection, query, getDocs, where, limit, startAfter} from 'firebase/firestore';
 import {initializeApp} from 'firebase/app';
 import {Grid, Box, Typography, IconButton} from '@mui/material';
 import SearchBar from '../../components/Search/SearchBar';
 import SlothCard from '../../components/SlothCard/SlothCard';
+import InfiniteScroll from 'react-infinite-scroller';
 
 import {getFirestore} from 'firebase/firestore';
 
-// const firebaseConfig = {
-//     apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
-//     authDomain: 'sillyslothclub-857b2.firebaseapp.com',
-//     databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
-//     projectId: 'sillyslothclub-857b2',
-//     storageBucket: 'sillyslothclub-857b2.appspot.com',
-//     messagingSenderId: '218793570529',
-//     appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
-//     measurementId: 'G-D24ZT79DDD',
-// };
+const firebaseConfig = {
+    apiKey: 'AIzaSyAmB2wyZ3tbJDloGzEi-gwdUiIkNpjVrX0',
+    authDomain: 'sillyslothclub-857b2.firebaseapp.com',
+    databaseURL: 'https://sillyslothclub-857b2-default-rtdb.europe-west1.firebasedatabase.app',
+    projectId: 'sillyslothclub-857b2',
+    storageBucket: 'sillyslothclub-857b2.appspot.com',
+    messagingSenderId: '218793570529',
+    appId: '1:218793570529:web:e2ffdf3009bd525faf87a0',
+    measurementId: 'G-D24ZT79DDD',
+};
 
-// initializeApp(firebaseConfig);
-// const db = getFirestore();
+initializeApp(firebaseConfig);
+const db = getFirestore();
+
+const loadLimit = 5;
 
 export default function Search() {
+    const [startIndex, setStartIndex] = useState(0);
     const [data, setData] = useState([]);
-    // useEffect(async () => {
-    //     const fireStoreData = []
-    //     // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold')];
-    //     const conditions = [];
 
-    //     const q = query(collection(db, 'sloths'), ...conditions);
-    //     const querySnapshot = await getDocs(q);
-    //     querySnapshot.forEach((doc) => {
-    //         // doc.data() is never undefined for query doc snapshots
-    //         // console.log(doc.id, ' => ', doc.data());
-    //         fireStoreData.push(doc.data());
-    //     });
-    //     setData(fireStoreData)
-    // }, []);
+
+
+    useEffect(async () => {
+        const fireStoreData = [];
+        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
+        const conditions = [limit(loadLimit)];
+        const q = query(collection(db, 'sloths'), ...conditions);
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, ' => ', doc.data());
+            fireStoreData.push(doc.data());
+        });
+        setData(fireStoreData);
+    }, []);
+
+    useEffect(() => {
+        console.log('🚀 ~ file: Search.js ~ line 52 ~ Search ~ data', data);
+    }, [data]);
+    
+    const loadMore =async (start)=>{
+        const fireStoreData = [];
+        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
+        const conditions = [startAfter(start), limit(loadLimit)];
+        const q = query(collection(db, 'sloths'), ...conditions);
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            // console.log(doc.id, ' => ', doc.data());
+            fireStoreData.push(doc.data());
+        });
+        setData((currData)=> [...currData, ...fireStoreData ] );
+    }
+
 
     useEffect(()=>{
-        console.log("🚀 ~ file: Search.js ~ line 52 ~ Search ~ data", data)
+        loadMore(startIndex)
+    },[startIndex])
 
-    },[data])
+    const loadFunc = () =>{
+        console.log("load!!!!!!!!!!!")
+        // setStartIndex((currValue)=>currValue+5)
+    }
 
     return (
         <div style={styles.container}>
@@ -58,9 +87,20 @@ export default function Search() {
                     {/* <SearchBar/> */}
                     <Grid item container>
                         <Grid item container justifyContent='center'>
-                            {data.map((item) => (
-                                <SlothCard sloth={item} />
-                            ))}
+                            <InfiniteScroll
+                                pageStart={0}
+                                loadMore={loadFunc}
+                                hasMore={true || false}
+                                loader={
+                                    <div className='loader' key={0}>
+                                        Loading ...
+                                    </div>
+                                }
+                            >
+                                {data.map((item) => (
+                                    <SlothCard sloth={item} />
+                                ))}
+                            </InfiniteScroll>
                         </Grid>
                     </Grid>
                 </Grid>
@@ -68,30 +108,6 @@ export default function Search() {
         </div>
     );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const Header = () => {
     return (
