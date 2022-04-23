@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import NavBar from '../../components/HideAppBar/HideAppBar';
 import ScrollTop from '../../components/ScrollToTop/ScrollToTop';
 import logo from '../../assets/logo-white.png';
@@ -7,7 +7,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {DiscordIcon} from '../../components/Icons/Icons';
 import ResponsiveDrawer from '../../components/ResponsiveDrawer/ResponsiveDraver';
-import {collection, query, getDocs, where, limit, startAfter} from 'firebase/firestore';
+import {collection, query, getDocs, where, limit, startAfter, orderBy} from 'firebase/firestore';
 import {initializeApp} from 'firebase/app';
 import {Grid, Box, Typography, IconButton} from '@mui/material';
 import SearchBar from '../../components/Search/SearchBar';
@@ -30,54 +30,67 @@ const firebaseConfig = {
 initializeApp(firebaseConfig);
 const db = getFirestore();
 
-const loadLimit = 5;
+const loadLimit = 12;
 
 export default function Search() {
-    const [startIndex, setStartIndex] = useState(0);
     const [data, setData] = useState([]);
 
 
+    const startIndex = useRef(0)
 
-    useEffect(async () => {
-        const fireStoreData = [];
-        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
-        const conditions = [limit(loadLimit)];
-        const q = query(collection(db, 'sloths'), ...conditions);
-        const querySnapshot = await getDocs(q);
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            // console.log(doc.id, ' => ', doc.data());
-            fireStoreData.push(doc.data());
-        });
-        setData(fireStoreData);
-    }, []);
+    // useEffect(async () => {
+    //     const fireStoreData = [];
+    //     // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
+    //     const conditions = [limit(loadLimit)];
+    //     const q = query(collection(db, 'sloths'), ...conditions);
+    //     const querySnapshot = await getDocs(q);
+    //     querySnapshot.forEach((doc) => {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         // console.log(doc.id, ' => ', doc.data());
+    //         fireStoreData.push(doc.data());
+    //     });
+    //     setData(fireStoreData);
+    // }, []);
 
     useEffect(() => {
         console.log('🚀 ~ file: Search.js ~ line 52 ~ Search ~ data', data);
     }, [data]);
     
-    const loadMore =async (start)=>{
+    // const loadMore =async (start)=>{
+    //     const fireStoreData = [];
+    //     // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
+    //     const conditions = [startAfter(start), limit(loadLimit)];
+    //     const q = query(collection(db, 'sloths'), ...conditions);
+    //     const querySnapshot = await getDocs(q);
+    //     querySnapshot.forEach((doc) => {
+    //         // doc.data() is never undefined for query doc snapshots
+    //         // console.log(doc.id, ' => ', doc.data());
+    //         fireStoreData.push(doc.data());
+    //     });
+    //     setData((currData)=> [...currData, ...fireStoreData ] );
+    // }
+
+
+    // useEffect(()=>{
+    //     loadMore(startIndex)
+    // },[startIndex])
+
+    const loadFunc = async (start, loadLimit ) =>{
+    console.log("🚀 ~ file: Search.js ~ line 78 ~ loadFunc ~ start", start)
         const fireStoreData = [];
         // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
-        const conditions = [startAfter(start), limit(loadLimit)];
+        let conditions = [orderBy('Id'), limit(loadLimit)];
+        if(start > 0){
+            conditions.push(startAfter(start))
+        }
         const q = query(collection(db, 'sloths'), ...conditions);
         const querySnapshot = await getDocs(q);
+        console.log("🚀 ~ file: Search.js ~ line 84 ~ loadFunc ~ querySnapshot", querySnapshot)
         querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            // console.log(doc.id, ' => ', doc.data());
             fireStoreData.push(doc.data());
         });
-        setData((currData)=> [...currData, ...fireStoreData ] );
-    }
-
-
-    useEffect(()=>{
-        loadMore(startIndex)
-    },[startIndex])
-
-    const loadFunc = () =>{
-        console.log("load!!!!!!!!!!!")
-        // setStartIndex((currValue)=>currValue+5)
+        setData((prevData) => [...prevData, ...fireStoreData ] );
+        startIndex.current +=12;
     }
 
     return (
@@ -85,23 +98,26 @@ export default function Search() {
             <ResponsiveDrawer header={<Header />}>
                 <Grid container>
                     {/* <SearchBar/> */}
-                    <Grid item container>
-                        <Grid item container justifyContent='center'>
+                    <Grid  container>
                             <InfiniteScroll
                                 pageStart={0}
-                                loadMore={loadFunc}
+                                loadMore={()=>loadFunc(startIndex.current, loadLimit)}
                                 hasMore={true || false}
                                 loader={
                                     <div className='loader' key={0}>
                                         Loading ...
                                     </div>
                                 }
+                                
                             >
+                                <Grid container justifyContent={'center'}>
                                 {data.map((item) => (
                                     <SlothCard sloth={item} />
                                 ))}
+                                </Grid>
+                                
+                            
                             </InfiniteScroll>
-                        </Grid>
                     </Grid>
                 </Grid>
             </ResponsiveDrawer>
