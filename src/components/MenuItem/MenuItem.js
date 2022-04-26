@@ -1,10 +1,10 @@
 import React from 'react';
 import {Grid, Typography} from '@mui/material';
 
-export default function BackgroundItem({name = 'Lorem', count = 333, color = 'white'}) {
+export default function MenuItem({name = 'Lorem', count = 333, color = 'white', img = null}) {
     return (
         <Grid container justifyContent={'center'} mb={'8px'}>
-            <Grid sx={{...styles.container, backgroundColor: color}}></Grid>
+            {img ? null : <Grid sx={{...styles.container, backgroundColor: color}}></Grid>}
 
             <Grid item container flexDirection={'column'}>
                 <Typography textAlign='center' component='p' variant='p' fontSize={12}>

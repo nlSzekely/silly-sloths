@@ -18,63 +18,14 @@ import Typography from '@mui/material/Typography';
 import Grid from '@mui/material/Grid';
 import DrawerExpandItem from '../DrawerExpandItem/DrawerExpandItem';
 
+import {colorsData} from "../../menuData"
+
 // Menu components
-import BackgroundItem from '../MenuItems/BackgroundItem';
+
+import MenuItem from '../MenuItem/MenuItem';
 
 const drawerWidth = 340;
 
-const colorsData = [
-    {
-        id: '1',
-        name: 'Light grey',
-        code: '#CDCDCF',
-    },
-    {
-        id: '2',
-        name: 'Terracotta',
-        code: '#E2A293',
-    },
-    {
-        id: '3',
-        name: 'Bubble gum',
-        code: '#BBAEC1',
-    },
-    {
-        id: '4',
-        name: 'Levander',
-        code: '#BBAEC1',
-    },
-    {
-        id: '5',
-        name: 'Lilac',
-        code: '#9AA1C1',
-    },
-    {
-        id: '6',
-        name: 'Baby',
-        code: '#87C0DD',
-    },
-    {
-        id: '7',
-        name: 'Air force',
-        code: '#6696A3',
-    },
-    {
-        id: '8',
-        name: 'Olive',
-        code: '#B8C6AB',
-    },
-    {
-        id: '9',
-        name: 'Moss',
-        code: '#8DB7A5',
-    },
-    {
-        id: '10',
-        name: 'Emerald',
-        code: '#40B59E',
-    },
-];
 
 const BackgroundContainer = () => {
     return (
@@ -89,12 +40,28 @@ const BackgroundContainer = () => {
         >
             {colorsData.map((item) => (
                 <Grid item xs={4}>
-                    <BackgroundItem key={item.id} name={item.name} color={item.code} />
+                    <MenuItem key={item.id} name={item.name} color={item.code} />
                 </Grid>
             ))}
         </Grid>
     );
 };
+
+const BodyContainer = () =>{
+    return (
+        <Grid
+        sx={{
+            // backgroundColor: '#2e3742',
+            // borderBottomLeftRadius: '8px',
+            // borderBottomRightRadius: '8px',
+        }}
+        container
+        p={'16px'}
+    >
+        
+    </Grid>
+    )
+}
 
 const menuData = [
     {

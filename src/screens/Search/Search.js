@@ -76,21 +76,20 @@ export default function Search() {
     // },[startIndex])
 
     const loadFunc = async (start, loadLimit ) =>{
-    console.log("🚀 ~ file: Search.js ~ line 78 ~ loadFunc ~ start", start)
-        const fireStoreData = [];
-        // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
-        let conditions = [orderBy('Id'), limit(loadLimit)];
-        if(start > 0){
-            conditions.push(startAfter(start))
-        }
-        const q = query(collection(db, 'sloths'), ...conditions);
-        const querySnapshot = await getDocs(q);
-        console.log("🚀 ~ file: Search.js ~ line 84 ~ loadFunc ~ querySnapshot", querySnapshot)
-        querySnapshot.forEach((doc) => {
-            fireStoreData.push(doc.data());
-        });
-        setData((prevData) => [...prevData, ...fireStoreData ] );
-        startIndex.current +=12;
+        // const fireStoreData = [];
+        // // const conditions = [where('Mouth', '==', 'Calm'), where('Body', '==', 'Gold'), limit(5)];
+        // let conditions = [orderBy('Id'), limit(loadLimit)];
+        // if(start > 0){
+        //     conditions.push(startAfter(start))
+        // }
+        // const q = query(collection(db, 'sloths'), ...conditions);
+        // const querySnapshot = await getDocs(q);
+        // console.log("🚀 ~ file: Search.js ~ line 84 ~ loadFunc ~ querySnapshot", querySnapshot)
+        // querySnapshot.forEach((doc) => {
+        //     fireStoreData.push(doc.data());
+        // });
+        // setData((prevData) => [...prevData, ...fireStoreData ] );
+        // startIndex.current +=12;
     }
 
     return (

@@ -137,7 +137,7 @@ export default function Section1() {
                                 </Typography>
                             </Button>
                         </Link>
-                        <Link href={'https://jpg.store/SillySlothClub'} target='_blank' sx={{textDecoration: 'none'}}>
+                        <Link href={'https://www.jpg.store/collection/sillyslothclub?fbclid=IwAR3y0HizU1UNVwHF3e8152_iJjRS0mrcAUj0o8yTW_nbo7s9ayJEF0LN9t0'} target='_blank' sx={{textDecoration: 'none'}}>
                             <Button
                                 sx={{width: '200px', marginBottom: {xs: '16px', sm: '0px'}}}
                                 color='secondary'
