@@ -43,7 +43,7 @@ export default function Footer() {
                     </IconButton>
 
                     <IconButton
-                        href='https://www.facebook.com/Silly-Sloth-Club-100329609322351/'
+                        href='https://www.facebook.com/sillyslothclub'
                         size='large'
                         color='inherit'
                         target="_blank"

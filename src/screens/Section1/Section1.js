@@ -117,8 +117,7 @@ export default function Section1() {
                         jungle.
                     </Typography>
                     <Typography component='p' variant='p' fontSize={'20px'}>
-                        All 10,000 Silly Sloths are programmatically randomly generated from more than 120 attributes
-                        which blends together perfectly and gives a unique personality to each Sloth.
+                    All 10,000 Silly Sloths are procedurally generated from more than 120 attributes which blends together perfectly, giving a unique personality to each Sloth.
                     </Typography>
 
                     <Grid container mt={'24px'} justifyContent='space-around'>

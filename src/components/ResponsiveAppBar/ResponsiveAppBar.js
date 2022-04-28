@@ -41,6 +41,10 @@ const ResponsiveAppBar = () => {
         }
     };
 
+    const handleClose = () => {
+        setAnchorElNav(null);
+      };
+
     const scrollToSection = (section) => {
         document.querySelector(section).scrollIntoView({
             behavior: 'smooth',
@@ -55,7 +59,7 @@ const ResponsiveAppBar = () => {
             <Grid justifyContent='space-between' container>
                 {/* Logo --- */}
                 <Box sx={{display: {xs: 'none', md: 'flex'}, padding: '20px 0', alignItems: 'center'}}>
-                    <img style={{maxWidth: 50}} src={logo} alt='logo' />
+                    <img  onClick={()=>handleCloseNavMenu('About us')} style={{maxWidth: 50, cursor:"pointer"}} src={logo} alt='logo' />
                     <Typography component={'p'} variant='p' fontSize={'18px'} fontWeight='bold' ml={2}>
                         Silly Sloth Club
                     </Typography>
@@ -90,6 +94,8 @@ const ResponsiveAppBar = () => {
                         sx={{
                             display: {xs: 'block', md: 'none'},
                         }}
+                        onClose={handleClose}
+                        
                     >
                         {pages.map((page) => (
                             <MenuItem key={page} onClick={() => handleCloseNavMenu(page)}>
@@ -126,7 +132,7 @@ const ResponsiveAppBar = () => {
                     </IconButton>
 
                     <IconButton
-                        href='https://www.facebook.com/Silly-Sloth-Club-100329609322351/'
+                        href='https://www.facebook.com/sillyslothclub'
                         size='large'
                         color='inherit'
                         target="_blank"

@@ -1,6 +1,8 @@
 import React from 'react';
 import {Typography, Button, Grid} from '@mui/material';
-import NotFoundImg from '../../assets/404.png'
+import NotFoundImg from '../../assets/404.png';
+import {Link} from '@mui/material';
+
 
 export default function NotFound() {
     return (
@@ -14,11 +16,14 @@ export default function NotFound() {
             </Typography>
             <Typography style={styles.text} color={'#A7A7A7'}>We're sorry, the page you requested could not be found</Typography>
             <Typography style={styles.text}  mb='24px' color={'#A7A7A7'}>Please go back to the homepage</Typography>
+            <Link href={"/"}sx={{textDecoration:"none"}} >
             <Button sx={{width: '200px'}} color='secondary' variant='contained'>
                 <Typography variant='p' m={'5px 20px'} fontWeight='bold'>
                     GO HOME
                 </Typography>
             </Button>
+            </Link>
+         
         </Grid>
     );
 }
@@ -48,7 +53,7 @@ const styles = {
         position:'absolute',
         width:'75%',
         display:'block',
-        maxWidth:' 500px',
+        maxWidth:' 400px',
         height: 'auto',
     }
 };

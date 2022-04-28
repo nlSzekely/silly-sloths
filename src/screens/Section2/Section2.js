@@ -42,7 +42,7 @@ export default function Section2() {
                         />
                     </Grid>
                 </Grid>
-                <Grid mt={'40px'} item container justifyContent={'space-around'}>
+                <Grid mt={'40px'} item container justifyContent={'space-around'}  alignItems="flex-end" >
                     <MysterySloth
                         link='https://payment.nft-maker.io/?p=2a15b68381e3483ea6fda51a775d17d8&c=5'
                         quantity={5}
