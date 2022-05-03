@@ -19,6 +19,7 @@
     "react-marquee-slider": "^1.1.5",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
+    "react-vertical-timeline-component": "^3.5.2",
     "swiper": "^8.0.7",
     "web-vitals": "^2.1.4"
   },

@@ -13,6 +13,7 @@ import Section4 from './screens/Section4/Section4';
 import Footer from './components/Footer/Footer';
 import Search from './screens/Search/Search';
 import NotFound from './screens/NotFound/NotFound';
+import TimeLine from "./screens/TimeLine/TimeLine";
 
 
 
@@ -71,6 +72,7 @@ const MainPage = () => {
             <Section1 />
             <Section2 />
             <Section3 />
+            <TimeLine/>
             <Section4 />
             <Footer />
         </Grid>
